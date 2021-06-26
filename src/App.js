@@ -5,7 +5,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        <img src="https://image.spreadshirtmedia.net/image-server/v1/mp/designs/164211028,width=178,height=178/anime-otaku-baka-divertido-refranes-de-ideas-de-regalos-de-manga.png" className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
@@ -15,7 +15,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          Buenas soy Franco y la idea sería un ecommerce merchandasing de anime, estilo bien otaku)?
         </a>
       </header>
     </div>
