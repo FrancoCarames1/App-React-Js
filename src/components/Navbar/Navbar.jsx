@@ -1,5 +1,6 @@
 import React from "react";
-import './Navbar.css'
+import './Navbar.css';
+import Carrito from "../Carrito/Carrito";
 
 const Navbar = () => {
     return (
@@ -12,6 +13,7 @@ const Navbar = () => {
                 <li className="contenido-lista">Decoraciones</li>
                 <li className="contenido-lista">Contacto</li>
             </ul>
+            <Carrito/>
         </nav>
     );
 };

@@ -12,6 +12,7 @@
     background-color: #8BBEB2;
     font-family: 'Bangers', cursive;
     color: rgba(12, 12, 12, 0.514);
+    height: 80px;
 }
 
 .nombre-tienda{
@@ -31,6 +32,10 @@
 
 .contenido-lista{
     margin-left: 1em;
+}
+.contenido-lista:hover{
+    color: #18314F;
+    text-decoration: underline aqua 2px;
 }
 
 .activa{
