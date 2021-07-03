@@ -2,14 +2,14 @@ import './App.css';
 import './index.css';
 import Navbar from './components/Navbar/Navbar';
 import "./components/FontAwesomeIcons";
-import Bienvenida from "./components/ItemListContainer/ItemListContainer"
+import ItemListContainer from "./components/ItemListContainer/ItemListContainer"
 
 function App() {
   return (
     <body>
       <Navbar/>
       <div>
-        <Bienvenida darBienvenida="おかえり - Okaeri" />
+        <ItemListContainer darBienvenida="おかえり - Okaeri" />
       </div>
     </body>
   );
