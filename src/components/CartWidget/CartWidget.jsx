@@ -1,5 +1,5 @@
 import React from "react";
-import "./Carrito.css"
+import "./CartWidget.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Carrito = () => {

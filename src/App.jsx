@@ -2,7 +2,7 @@ import './App.css';
 import './index.css';
 import Navbar from './components/Navbar/Navbar';
 import "./components/FontAwesomeIcons";
-import Bienvenida from "./components/Bienvenida/Bienvenida"
+import Bienvenida from "./components/ItemListContainer/ItemListContainer"
 
 function App() {
   return (
