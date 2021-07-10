@@ -1,9 +1,15 @@
 import React from "react";
 import "./ItemListContainer.css";
+import ItemCount from "./ItemCount/ItemCount";
 
 const Bienvenida = (props) => {
     return(
-        <h2>{props.darBienvenida}</h2>
+        <div>
+            <h2>{props.darBienvenida}</h2>
+            <div className="productos">
+                <ItemCount nombreItem="Póster de Luffy (Wanted)"/>
+            </div>
+        </div>
     );
 };
 

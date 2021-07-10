@@ -1,5 +1,10 @@
 h2{
-    margin-top: 80px;
+    margin-top: 3em;
+    margin-bottom: 0.5em;
     text-align: center;
     font-size: 4em;
+}
+
+.productos {
+    margin: 0 1em 0 1em;
 }

@@ -6,12 +6,14 @@ import ItemListContainer from "./components/ItemListContainer/ItemListContainer"
 
 function App() {
   return (
-    <body>
-      <Navbar/>
+    <>
+      <header>
+        <Navbar/>
+      </header>
       <div>
         <ItemListContainer darBienvenida="おかえり - Okaeri" />
       </div>
-    </body>
+    </>
   );
 }
 

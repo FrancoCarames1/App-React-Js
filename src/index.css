@@ -3,4 +3,7 @@ body {
   padding: 0;
   box-sizing: border-box;
   font-size: 10px;
+  min-height: 100vh;
+  background: rgb(56,78,119);
+  background: linear-gradient(180deg, rgba(56,78,119,1) 0%, rgba(139,190,178,1) 61%, rgba(255,255,255,1) 100%);
 }
