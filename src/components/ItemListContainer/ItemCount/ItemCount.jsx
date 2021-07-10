@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import './ItemCount.css';
 
-const ItemCount = (props) =>{
+const ItemCount = ({item}) =>{
     
     const [contador, setContador] = useState(1);
     
@@ -17,7 +17,7 @@ const ItemCount = (props) =>{
 
     const sumarUno = () =>{
 
-        if (contador >= 5) {
+        if (contador >= item.stock) {
             alert("No hay más stock")
         } else {
             setContador(contador + 1)
@@ -26,9 +26,9 @@ const ItemCount = (props) =>{
     };
 
     return(
-        <div className="item">
-            <img src="https://www.teahub.io/photos/full/146-1463938_one-piece-wanted.jpg" alt="fotoEjemplo" />
-            <h5>{props.nombreItem}</h5>
+        <div className="item" id={"producto-" + item.id}>
+            <img src={item.img} alt="fotoEjemplo" />
+            <h5>{item.titulo}</h5>
             <div className="contador-items">
                 <button onClick={restarUno}>-</button>
                 <p>{contador}</p>

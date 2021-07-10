@@ -1,4 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
 body {
+  font-family: 'Open Sans', sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -6,4 +9,18 @@ body {
   min-height: 100vh;
   background: rgb(56,78,119);
   background: linear-gradient(180deg, rgba(56,78,119,1) 0%, rgba(139,190,178,1) 61%, rgba(255,255,255,1) 100%);
+}
+
+main .bienvenida h2{
+  font-size: 2rem;
+  margin-top: 7rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+main .bienvenida h5{
+  font-size: 1.5rem;
+  margin-top: 0;
+  text-align: center;
+  line-height: 2rem;
 }

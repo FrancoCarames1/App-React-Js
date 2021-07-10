@@ -1,4 +1,3 @@
-import './App.css';
 import './index.css';
 import Navbar from './components/Navbar/Navbar';
 import "./components/FontAwesomeIcons";
@@ -10,9 +9,15 @@ function App() {
       <header>
         <Navbar/>
       </header>
-      <div>
-        <ItemListContainer darBienvenida="おかえり - Okaeri" />
-      </div>
+      <main>
+        <section className="bienvenida">
+          <h2>いらっしゃいませ！ - Irasshaimase! - ¡Bienvenido!</h2>
+          <h5>Esperamos que encuentres algo de tu gusto &#128521;</h5>
+        </section>
+        <section>
+          <ItemListContainer/>
+        </section>
+      </main>
     </>
   );
 }
