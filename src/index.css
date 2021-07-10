@@ -11,9 +11,13 @@ body {
   background: linear-gradient(180deg, rgba(56,78,119,1) 0%, rgba(139,190,178,1) 61%, rgba(255,255,255,1) 100%);
 }
 
+header{
+  height: 6rem;
+}
+
 main .bienvenida h2{
   font-size: 2rem;
-  margin-top: 7rem;
+  margin-top: 1rem;
   margin-bottom: 1rem;
   text-align: center;
 }
