@@ -7,7 +7,7 @@ const ItemCount = ({item}) =>{
     
     const restarUno = () =>{
 
-        if (contador <= 1) {
+        if (contador <= item.compraMin) {
             alert("No se puede comprar menos de una unidad")
         } else {
             setContador(contador - 1)            

@@ -13,7 +13,8 @@ const Bienvenida = (props) => {
             img: "https://www.teahub.io/photos/full/146-1463938_one-piece-wanted.jpg",
             stock: 5,
             precio: 800,
-            categoria: "accesorio"
+            categoria: "accesorio",
+            compraMin: 1
         },
         {
             id: 2,
@@ -21,7 +22,8 @@ const Bienvenida = (props) => {
             img: "https://http2.mlstatic.com/D_NQ_NP_881347-MLA45392507786_032021-O.jpg",
             stock: 10,
             precio: 5000,
-            categoria: "indumentaria"
+            categoria: "indumentaria",
+            compraMin: 1
         },
         {
             id: 3,
@@ -29,7 +31,8 @@ const Bienvenida = (props) => {
             img: "https://morondangabcn.com/wp-content/uploads/2021/02/COSPLAY-NARUTO-BANDANA-CABEZA.jpg",
             stock: 15,
             precio: 600,
-            categoria: "indumentaria"
+            categoria: "indumentaria",
+            compraMin: 1
         }
     ];
 
