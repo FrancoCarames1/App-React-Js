@@ -6,7 +6,7 @@ import ItemInfo from "./ItemInfo";
 const ItemInfoContainer= () => {
 
     const [displayItemInfo, setDisplayItemInfo] = useState([])
-    const [loading, setLoading] = useState(false)
+    const [loading, setLoading] = useState(true)
 
     const {id: idParams} = useParams(); // Lee el enrutado y toma el id
 
@@ -14,8 +14,8 @@ const ItemInfoContainer= () => {
         return new Promise((resolve) =>{
             setTimeout(()=>{
                 resolve(productosArray.find((item)=> item.id.toString() === idParams));
+                setLoading(false)
             }, 2000);
-            setLoading(false)
         });
     }
 
@@ -24,7 +24,7 @@ const ItemInfoContainer= () => {
         setLoading(true)
     }, [idParams]);
 
-    return(loading && <ItemInfo displayItemInfo={displayItemInfo}/>);
+    return(!loading && <ItemInfo displayItemInfo={displayItemInfo}/>);
 };
 
 export default ItemInfoContainer;
