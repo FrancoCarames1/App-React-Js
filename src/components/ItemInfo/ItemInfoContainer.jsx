@@ -6,6 +6,7 @@ import ItemInfo from "./ItemInfo";
 const ItemInfoContainer= () => {
 
     const [displayItemInfo, setDisplayItemInfo] = useState([])
+    const [loading, setLoading] = useState(false)
 
     const {id: idParams} = useParams(); // Lee el enrutado y toma el id
 
@@ -14,14 +15,16 @@ const ItemInfoContainer= () => {
             setTimeout(()=>{
                 resolve(productosArray.find((item)=> item.id.toString() === idParams));
             }, 2000);
+            setLoading(false)
         });
     }
 
     useEffect(() => {
         getItemsInfo().then((result) => setDisplayItemInfo(result)); //Llama la función y después en el display escribe el item 
+        setLoading(true)
     }, [idParams]);
 
-    return(<ItemInfo displayItemInfo={displayItemInfo}/>);
+    return(loading && <ItemInfo displayItemInfo={displayItemInfo}/>);
 };
 
 export default ItemInfoContainer;

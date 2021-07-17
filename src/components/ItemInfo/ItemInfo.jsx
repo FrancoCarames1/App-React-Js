@@ -27,7 +27,7 @@ const ItemInfo = ({ displayItemInfo: item }) => {
 
     return (
         <div className="item" id={"producto-" + item.id}>
-            <img src={`./img/${item.img}`} alt={item.titulo} />
+            <img src={`/img/${item.img}`} alt={item.titulo} />
             <h5>{item.titulo}</h5>
             <div className="contador-items">
                 <button onClick={restarUno}>-</button>
