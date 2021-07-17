@@ -1,5 +1,5 @@
 import React from 'react';
-import ItemCount from './ItemCount/ItemCount';
+import ItemCount from './ItemCard/ItemCard';
 
 const ItemList = ({displayItems}) => {
     return(

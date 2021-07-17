@@ -1,21 +1,21 @@
 import React, {useState} from "react";
-import './ItemCount.css';
+import "./ItemInfo.css";
 
-const ItemCount = ({item}) =>{
-    
+const ItemInfo = ({ displayItemInfo: item }) => {
+
     const [contador, setContador] = useState(1);
-    
-    const restarUno = () =>{
+
+    const restarUno = () => {
 
         if (contador <= 1) {
             alert("No se puede comprar menos de una unidad")
         } else {
-            setContador(contador - 1)            
+            setContador(contador - 1)
         }
 
     };
 
-    const sumarUno = () =>{
+    const sumarUno = () => {
 
         if (contador >= item.stock) {
             alert("No hay más stock")
@@ -25,9 +25,9 @@ const ItemCount = ({item}) =>{
 
     };
 
-    return(
+    return (
         <div className="item" id={"producto-" + item.id}>
-            <img src={item.img} alt="fotoEjemplo" />
+            <img src={require(`../../assets/img/${item.img}`).default} alt={item.titulo} />
             <h5>{item.titulo}</h5>
             <div className="contador-items">
                 <button onClick={restarUno}>-</button>
@@ -36,7 +36,8 @@ const ItemCount = ({item}) =>{
             </div>
             <button className="agregar-carrito">Agregar al carrito</button>
         </div>
-    );
+    )
+
 };
 
-export default ItemCount;
+export default ItemInfo;

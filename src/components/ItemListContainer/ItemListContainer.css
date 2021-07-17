@@ -9,5 +9,41 @@ h2{
     margin: 0;
     width: 100%;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-evenly;
+    padding: 1rem 4rem;
+}
+
+.item{
+    display: flex;
+    flex-direction: column;
+    border: 3px solid #80dbd1;
+    border-radius: 1rem;
+    background:  #99e1d954;
+    width: 26rem;
+}
+
+.item .imagen-producto{
+    height: 30rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    padding: 1.2rem;
+    background-color: #f0f7f42a;
+    border-radius: 0.7rem 0.7rem 0 0;
+}
+
+.imagen-producto img{
+    height: 100%;
+}
+
+.item-preview{
+    flex: 1;
+    text-align: center;
+    padding: 1.2rem;
+}
+
+.item-preview p{
+    font-size: 1.8rem;
 }
