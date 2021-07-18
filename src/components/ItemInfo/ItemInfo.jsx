@@ -26,15 +26,22 @@ const ItemInfo = ({ displayItemInfo: item }) => {
     };
 
     return (
-        <div className="item" id={"producto-" + item.id}>
-            <img src={`/img/${item.img}`} alt={item.titulo} />
-            <h5>{item.titulo}</h5>
-            <div className="contador-items">
-                <button onClick={restarUno}>-</button>
-                <p>{contador}</p>
-                <button onClick={sumarUno}>+</button>
+        <div className="item-info" id={"producto-" + item.id}>
+            <div className="contenedor-imagen">
+                <img src={`/img/${item.img}`} alt={item.titulo} />
             </div>
-            <button className="agregar-carrito">Agregar al carrito</button>
+            <div className="descripcion">
+                <h5>{item.titulo}</h5>
+                <p>{"$ "+item.precio}</p>
+                <div className="contenedor-botones">
+                    <div className="contador-items">
+                        <button onClick={restarUno}>-</button>
+                        <p>{contador}</p>
+                        <button onClick={sumarUno}>+</button>
+                    </div>
+                    <button className="agregar-carrito">Agregar al carrito</button>
+                </div>
+            </div>
         </div>
     )
 

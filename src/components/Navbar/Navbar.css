@@ -1,125 +1,163 @@
-@import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Bangers&display=swap");
 
-.barra-nav{
-    position: fixed;
-    background-color: #ffffff48;
-    transition: background 2s;
-    padding: 0.5rem;
-    width: 100%;
-    font-family: 'Bangers', monospace;
+.barra-nav {
+  position: fixed;
+  background-color: #ffffff83;
+  transition: background 1.5s;
+  padding: 0rem;
+  width: 100%;
+  font-family: "Bangers", monospace;
 }
 
-.barra-nav:hover{
-    background-color: #f0f7f49f ;
+.barra-nav:hover {
+  background-color: #cad6d1d5;
 }
 
-.nombre-tienda a{
-    display: inline-block;
-    font-size: 2.5rem;
-    color: #18314F;
-    border: solid 2px;
-    border-radius: 50%;
-    padding: 15px;
+.nombre-tienda a {
+  display: inline-block;
+  font-size: 2.5rem;
+  color: #18314f;
+  border: solid 2px;
+  border-radius: 50%;
+  padding: 15px;
+  transition: all 1s;
 }
 
-.lista-plegable{
-    list-style-type: none;
+.nombre-tienda a:hover {
+  border-color: aquamarine;
+  border-width: 3px;
 }
 
-.lista-plegable li{
-    color: rgba(32, 64, 112, 0.767);
-    font-size: 2rem;
-    padding:  1.5rem 0.5rem;
+.lista-plegable {
+  list-style-type: none;
 }
 
-.lista-plegable li:hover{
-    color: #18314F;
-    text-decoration: underline aqua 2px;
+.lista-plegable li {
+  color: rgba(32, 64, 112, 0.767);
+  font-size: 2rem;
+  padding: 1.5rem 0.5rem;
+  transition: border 0.2s;
+}
+
+.lista-plegable li:hover {
+  color: #18314f;
 }
 
 /* Menu mobile */
 
-.lista-plegable{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
+.lista-plegable {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.toggle{
-    order: 1;
-    margin: 1rem;
+.toggle {
+  order: 1;
 }
 
-.nombre-tienda{
-    order: 2;
+.nombre-tienda {
+  order: 2;
 }
 
-.link-carro{
-    order: 3;
-    display: inline-block;
+.link-carro {
+  order: 3;
+  display: inline-block;
 }
 
-.contenido-lista{
-    width: 100%;
-    text-align: center;
-    order: 4;
-    display: none;
+.contenido-lista {
+  width: 100%;
+  text-align: center;
+  order: 4;
+  display: none;
+  border-top: 1px solid #476891ab;
+  background-color: #cad6d18c;
+  transition: all 0.5s;
+  position: relative;
 }
 
-.contenido-lista.active{
-    display: block;
+.contenido-lista::after {
+  content: "";
+  position: absolute;
+  background-color: aqua;
+  height: 2px;
+  width: 100%;
+  left: 0;
+  bottom: 10px;
+  transform: scaleX(0);
+  transition: all 0.5s;
 }
 
-.toggle{
-    cursor: pointer;
+#lista1:hover::after {
+  transform: scaleX(0.13);
 }
 
-.barras{
-    background: rgb(0, 0, 0);
-    display: block;
-    height: 3px;
-    position: relative;
-    width: 18px;
+#lista2:hover::after {
+  transform: scaleX(0.21);
 }
 
-.barras::before, .barras::after{
-    background: rgb(0, 0, 0);
-    content: "";
-    display: inline-block;
-    height: 3px;
-    position: absolute;
-    width: 18px;
-}
-.barras::before{
-    top: 5px;
+#lista3:hover::after {
+  transform: scaleX(0.18);
 }
 
-.barras::after{
-    top: -5px;
-    height: 3px;
+#lista4:hover::after {
+  transform: scaleX(0.21);
+}
+
+#lista5:hover::after {
+  transform: scaleX(0.15);
+}
+
+.contenido-lista.active {
+  display: block;
+}
+
+.toggle {
+  cursor: pointer;
 }
 
 @media all and (min-width: 850px) {
-    .lista-plegable{
-        justify-content: center;
-    }
-    .nombre-tienda{
-        flex: 1;
-        order: 1;
-    }
-    .contenido-lista{
-        display: block;
-        width: auto;
-        order: 2;
-    }
-    .link-carro{
-        order: 3;
-    }
-    .toggle{
-        display: none;
-    }
-    .lista-plegable li {
-        padding: 1.5rem 1rem;
-    }
+  .lista-plegable {
+    justify-content: center;
+  }
+  .nombre-tienda {
+    flex: 1;
+    order: 1;
+  }
+  .contenido-lista {
+    display: block;
+    width: auto;
+    order: 2;
+    background-color: inherit;
+    border: none;
+  }
+  .link-carro {
+    order: 3;
+  }
+  .toggle {
+    display: none;
+  }
+  .lista-plegable li {
+    padding: 1.5rem 1rem;
+  }
+
+  #lista1:hover::after {
+    transform: scaleX(0.9);
+  }
+
+  #lista2:hover::after {
+    transform: scaleX(0.9);
+  }
+
+  #lista3:hover::after {
+    transform: scaleX(0.9);
+  }
+
+  #lista4:hover::after {
+    transform: scaleX(0.9);
+  }
+
+  #lista5:hover::after {
+    transform: scaleX(0.9);
+  }
 }

@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import './ItemCard.css';
 
 const ItemCard = ({item}) => {
 
@@ -8,7 +7,7 @@ const ItemCard = ({item}) => {
         <Link to={`/${item.categoria}/${item.id}`}>
             <div className="item" id={"producto-" + item.id}>
                 <div className="imagen-producto">
-                    <img src={`./img/${item.img}`} alt={item.titulo} />
+                    <img src={`/img/${item.img}`} alt={item.titulo} />
                 </div>
                 <div className="item-preview">
                     <h5>{item.titulo}</h5>
