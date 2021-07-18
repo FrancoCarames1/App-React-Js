@@ -5,6 +5,11 @@ h2{
     font-size: 4em;
 }
 
+h5{
+    margin-bottom: 1em;
+    font-size: 2em;
+}
+
 .productos {
     margin: 0;
     width: 100%;
@@ -21,6 +26,7 @@ h2{
     border-radius: 1rem;
     background:  #99e1d954;
     width: 26rem;
+    margin: 0 2rem 2rem 2rem ;
 }
 
 .item .imagen-producto{

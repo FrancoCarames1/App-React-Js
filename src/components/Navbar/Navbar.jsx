@@ -2,6 +2,7 @@ import React from "react";
 import './Navbar.css';
 import CartWidget from "../CartWidget/CartWidget";
 import { Link } from "react-router-dom";
+import HamburguerMenu from "../HamburgerMenu/HamburguerMenu";
 
 const Navbar = () => {
 
@@ -32,16 +33,14 @@ const Navbar = () => {
     return (
         <nav className="barra-nav">
             <ul className="lista-plegable">
-                
-                    <li className="nombre-tienda"><Link to="/">Mundo Otaku</Link></li>
-                
+                <li className="nombre-tienda"><Link to="/">Mundo Otaku</Link></li>
                 <li className="contenido-lista" id="lista1">Mangas</li>
                 <li className="contenido-lista" id="lista2">Indumentaria</li>
                 <li className="contenido-lista" id="lista3">Accesorios</li>
                 <li className="contenido-lista" id="lista4">Decoraciones</li>
                 <li className="contenido-lista" id="lista5">Contacto</li>
                 <li className="link-carro"><CartWidget/></li>
-                <li className="toggle" onClick={desplegarLista}><span className="barras"></span></li>
+                <li className="toggle" onClick={desplegarLista}><HamburguerMenu/></li>
             </ul>
         </nav>
     );
