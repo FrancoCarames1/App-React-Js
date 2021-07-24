@@ -4,7 +4,7 @@ import ItemList from "./ItemList";
 import {productosArray} from "../../productos/productosArray.json";
 import { useParams } from "react-router-dom";
 
-const Bienvenida = () => {
+const Bienvenida = (props) => {
 
     const [displayItems, setDisplayItems] = useState([]);
 
@@ -16,10 +16,8 @@ const Bienvenida = () => {
                 if (activeCategory){
                     let productosFiltrados = productosArray.filter((item) => item.categoria === activeCategory);
                     resolve(productosFiltrados);
-                    console.log(activeCategory)
                 }else{
                     resolve(productosArray);
-                    console.log(activeCategory)
                 }
             }, 2000);
         });
@@ -31,7 +29,6 @@ const Bienvenida = () => {
 
     return(
         <div className="productos">
-            <p>CACA: {activeCategory}</p>
             <ItemList displayItems ={displayItems}/>
         </div>
     );

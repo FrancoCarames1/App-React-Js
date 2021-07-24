@@ -25,5 +25,32 @@
             "precio": 600,
             "categoria": "indumentaria"
         }
+    ],
+    "categorias":
+    [
+        {
+            "id": 1,
+            "titulo": "mangas"
+        },
+        {
+            "id": 2,
+            "titulo": "indumentaria"
+        },
+        {
+            "id": 3,
+            "titulo": "accesorios"
+        },
+        {
+            "id": 4,
+            "titulo": "decoraciones"
+        },
+        {
+            "id": 5,
+            "titulo": "contacto"
+        },
+        {
+            "id": 6,
+            "titulo": "carrito"
+        }
     ]
 }

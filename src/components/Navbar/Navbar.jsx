@@ -3,6 +3,7 @@ import './Navbar.css';
 import CartWidget from "../CartWidget/CartWidget";
 import { Link } from "react-router-dom";
 import HamburguerMenu from "../HamburgerMenu/HamburguerMenu";
+import {categorias} from "../../productos/productosArray.json";
 
 const Navbar = () => {
 
@@ -34,11 +35,9 @@ const Navbar = () => {
         <nav className="barra-nav">
             <ul className="lista-plegable">
                 <li className="nombre-tienda"><Link to="/">Mundo Otaku</Link></li>
-                <li className="contenido-lista" id="lista1"><Link to="/mangas">Mangas</Link></li>
-                <li className="contenido-lista" id="lista2"><Link to="/indumentaria">Indumentaria</Link></li>
-                <li className="contenido-lista" id="lista3"><Link to="/accesorios">Accesorios</Link></li>
-                <li className="contenido-lista" id="lista4"><Link to="/decoraciones">Decoraciones</Link></li>
-                <li className="contenido-lista" id="lista5"><Link to="/contacto">Contacto</Link></li>
+                {categorias.map(() =>(
+                    <li className="contenido-lista" id={`lista${categorias.id}`}><Link to={`/${categorias.titulo}`}>{categorias.titulo}</Link></li>
+                ))}
                 <li className="link-carro"><CartWidget/></li>
                 <li className="toggle" onClick={desplegarLista}><HamburguerMenu/></li>
             </ul>

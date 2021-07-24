@@ -12,3 +12,5 @@ const ItemList = ({displayItems}) => {
 };
 
 export default ItemList;
+
+//contenido-lista    listaID
