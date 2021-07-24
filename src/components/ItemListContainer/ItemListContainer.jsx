@@ -10,20 +10,21 @@ const Bienvenida = () => {
 
     const {activeCategory} = useParams();
 
-    const getCategoryItems = () => {
-        return new Promise ((resolve) => {
-            setTimeout(() => {
-                if (activeCategory){
-                    let productosFiltrados = productosArray.filter((item) => item.categoria.includes(activeCategory));
-                    resolve(productosFiltrados);
-                }else{
-                    resolve(productosArray);
-                }
-            }, 2000);
-        });
-    }
-
     useEffect(()=>{
+
+        const getCategoryItems = () => {
+            return new Promise ((resolve) => {
+                setTimeout(() => {
+                    if (activeCategory){
+                        let productosFiltrados = productosArray.filter((item) => item.categoria.includes(activeCategory));
+                        resolve(productosFiltrados);
+                    }else{
+                        resolve(productosArray);
+                    }
+                }, 2000);
+            });
+        }
+
         getCategoryItems().then((result) => setDisplayItems(result));
     }, [activeCategory]);
 
