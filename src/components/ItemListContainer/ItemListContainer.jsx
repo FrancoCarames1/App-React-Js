@@ -23,7 +23,9 @@ const Bienvenida = (props) => {
         });
     }
 
-    getCategoryItems().then((result) => setDisplayItems(result));
+    useEffect(()=>{
+        getCategoryItems().then((result) => setDisplayItems(result));
+    }, [activeCategory]);
 
     return(
         <div className="productos">
