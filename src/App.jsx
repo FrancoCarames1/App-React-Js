@@ -7,7 +7,7 @@ import ItemInfoContainer from './components/ItemInfo/ItemInfoContainer';
 
 function App() {
 
-  const {categoria: activeCategory} = useParams();
+  const {categoria: categoriaDisplay} = useParams();
 
   return (
     <BrowserRouter>
@@ -27,7 +27,7 @@ function App() {
           </Route>
           <Route exact path="/:categoria">
             <section className="bienvenida">
-              <h2>Viendo {activeCategory}</h2>
+              <h2>Viendo {categoriaDisplay}</h2>
               <h5>Esperamos que encuentres algo de tu gusto &#128521;</h5>
             </section>
             <section>
