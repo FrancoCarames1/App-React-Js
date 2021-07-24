@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import ItemCount from "./ItemCount/ItemCount";
 import "./ItemInfo.css";
 
 const ItemInfo = ({ displayItemInfo: item }) => {
@@ -33,14 +34,7 @@ const ItemInfo = ({ displayItemInfo: item }) => {
             <div className="descripcion">
                 <h5>{item.titulo}</h5>
                 <p>{"$ "+item.precio}</p>
-                <div className="contenedor-botones">
-                    <div className="contador-items">
-                        <button onClick={restarUno}>-</button>
-                        <p>{contador}</p>
-                        <button onClick={sumarUno}>+</button>
-                    </div>
-                    <button className="agregar-carrito">Agregar al carrito</button>
-                </div>
+                <ItemCount contador={contador} restarUno={restarUno} sumarUno={sumarUno} />
             </div>
         </div>
     )
