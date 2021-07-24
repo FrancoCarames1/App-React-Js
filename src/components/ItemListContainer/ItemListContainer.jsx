@@ -8,7 +8,7 @@ const Bienvenida = () => {
 
     const [displayItems, setDisplayItems] = useState([]);
 
-    const {activeCategory} = useParams();
+    const {categoria: activeCategory} = useParams();
 
     useEffect(()=>{
 
