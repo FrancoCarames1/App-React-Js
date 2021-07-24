@@ -22,6 +22,15 @@ function App() {
               <ItemListContainer />
             </section>
           </Route>
+          <Route exact path="/:categoria">
+            <section className="bienvenida">
+              <h2>Viendo </h2>
+              <h5>Esperamos que encuentres algo de tu gusto &#128521;</h5>
+            </section>
+            <section>
+              <ItemListContainer />
+            </section>
+          </Route>
           <Route exact path="/:item/:id">
             <ItemInfoContainer/>
           </Route>
