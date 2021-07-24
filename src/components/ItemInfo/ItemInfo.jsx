@@ -32,8 +32,7 @@ const ItemInfo = ({ displayItemInfo: item }) => {
             </div>
             <div className="descripcion">
                 <h5>{item.titulo}</h5>
-                <p>Precio individual: {"$ "+item.precio}</p>
-                <p>Precio Total: {"$ "+item.precio*contador}</p>
+                <p>{"$ "+item.precio}</p>
                 <div className="contenedor-botones">
                     <div className="contador-items">
                         <button onClick={restarUno}>-</button>
