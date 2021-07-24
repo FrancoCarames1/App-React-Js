@@ -6,9 +6,6 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import ItemInfoContainer from './components/ItemInfo/ItemInfoContainer';
 
 function App() {
-  
-  const {categoria: activeCategory} = useParams();
-
   return (
     <BrowserRouter>
       <header>
