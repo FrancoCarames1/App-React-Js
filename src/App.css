@@ -24,14 +24,14 @@ header{
 }
 
 main .bienvenida h2{
-  font-size: 2rem;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  font-size: 2.5rem;
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
   text-align: center;
 }
 
 main .bienvenida h5{
-  font-size: 1.5rem;
+  font-size: 2rem;
   margin-top: 0;
   text-align: center;
   line-height: 2rem;
