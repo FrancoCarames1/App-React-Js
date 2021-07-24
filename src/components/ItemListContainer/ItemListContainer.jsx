@@ -13,7 +13,7 @@ const Bienvenida = () => {
     const getCategoryItems = () => {
         return new Promise ((resolve) => {
             setTimeout(() => {
-                console.log(activeCategory)
+                
                 resolve(productosArray);
             }, 2000);
         });

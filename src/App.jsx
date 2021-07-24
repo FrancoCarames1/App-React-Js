@@ -13,7 +13,16 @@ function App() {
       </header>
       <Switch>
         <main>
-          <Route exact path="/">
+        <Route exact path="/">
+            <section className="bienvenida">
+              <h2>いらっしゃいませ！ - Irasshaimase! - ¡Bienvenido!</h2>
+              <h5>Esperamos que encuentres algo de tu gusto &#128521;</h5>
+            </section>
+            <section>
+              <ItemListContainer />
+            </section>
+          </Route>
+          <Route exact path="/indumentaria">
             <section className="bienvenida">
               <h2>いらっしゃいませ！ - Irasshaimase! - ¡Bienvenido!</h2>
               <h5>Esperamos que encuentres algo de tu gusto &#128521;</h5>
