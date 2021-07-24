@@ -4,7 +4,7 @@ import ItemList from "./ItemList";
 import {productosArray} from "../../productos/productosArray.json";
 import { useParams } from "react-router-dom";
 
-const Bienvenida = (props) => {
+const Bienvenida = () => {
 
     const [displayItems, setDisplayItems] = useState([]);
 
@@ -13,13 +13,8 @@ const Bienvenida = (props) => {
     const getCategoryItems = () => {
         return new Promise ((resolve) => {
             setTimeout(() => {
-                if (activeCategory){
-                    let productosFiltrados = productosArray.filter((item) => item.categoria === activeCategory);
-                    resolve(productosFiltrados);
-                }else{
-                    resolve(productosArray);
-                }
                 console.log(activeCategory)
+                resolve(productosArray);
             }, 2000);
         });
     }
