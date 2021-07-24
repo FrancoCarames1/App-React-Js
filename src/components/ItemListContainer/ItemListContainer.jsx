@@ -13,8 +13,12 @@ const Bienvenida = () => {
     const getCategoryItems = () => {
         return new Promise ((resolve) => {
             setTimeout(() => {
-                
-                resolve(productosArray);
+                if (activeCategory){
+                    let productosFiltrados = productosArray.filter((item) => item.categoria === activeCategory);
+                    resolve(productosFiltrados);
+                    console.log(activeCategory)
+                }else{
+                    resolve(productosArray);
             }, 2000);
         });
     }
