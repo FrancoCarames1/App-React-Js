@@ -22,7 +22,7 @@ function App() {
               <ItemListContainer />
             </section>
           </Route>
-          <Route exact path="/indumentaria">
+          <Route path="/indumentaria">
             <section className="bienvenida">
               <h2>いらっしゃいませ！ - Irasshaimase! - ¡Bienvenido!</h2>
               <h5>Esperamos que encuentres algo de tu gusto &#128521;</h5>
