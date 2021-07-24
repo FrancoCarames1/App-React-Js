@@ -24,7 +24,7 @@ function App() {
           </Route>
           <Route exact path="/:categoria">
             <section className="bienvenida">
-              <h2>OWO</h2>
+              <h2>OwO</h2>
               <h5>Esperamos que encuentres algo de tu gusto &#128521;</h5>
             </section>
             <section>
