@@ -46,10 +46,11 @@
 .item-info h5{
     text-align: center;
     margin: 1rem;
+    font-size: 2.5rem;
 }
 
 .item-info p{
-    font-size: 1.6rem;
+    font-size: 2rem;
     text-align: center;
 }
 
