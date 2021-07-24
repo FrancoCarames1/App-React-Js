@@ -2,10 +2,13 @@ import './App.css';
 import Navbar from './components/Navbar/Navbar';
 import "./components/FontAwesomeIcons";
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { BrowserRouter, Switch, Route, useParams } from "react-router-dom";
 import ItemInfoContainer from './components/ItemInfo/ItemInfoContainer';
 
 function App() {
+
+  const {categoria: activeCategory} = useParams();
+
   return (
     <BrowserRouter>
       <header>
@@ -24,7 +27,7 @@ function App() {
           </Route>
           <Route exact path="/:categoria">
             <section className="bienvenida">
-              <h2>Viendo </h2>
+              <h2>Viendo {activeCategory}</h2>
               <h5>Esperamos que encuentres algo de tu gusto &#128521;</h5>
             </section>
             <section>
