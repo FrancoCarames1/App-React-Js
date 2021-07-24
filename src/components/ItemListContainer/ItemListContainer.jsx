@@ -19,6 +19,8 @@ const Bienvenida = () => {
                     console.log(activeCategory)
                 }else{
                     resolve(productosArray);
+                    console.log(activeCategory)
+                }
             }, 2000);
         });
     }
