@@ -31,6 +31,7 @@ const Bienvenida = () => {
 
     return(
         <div className="productos">
+            <p>CACA: {activeCategory}</p>
             <ItemList displayItems ={displayItems}/>
         </div>
     );
