@@ -7,7 +7,7 @@
             "img": "PosterWantedLuffy.jpg",
             "stock": 5,
             "precio": 800,
-            "categoria": "accesorios"
+            "categoria": "decoraciones"
         },
         {
             "id": 2,
@@ -19,7 +19,7 @@
         },
         {
             "id": 3,
-            "titulo": "Bandana de naruto",
+            "titulo": "Bandana de Naruto",
             "img": "BandaDeNaruto.jpg",
             "stock": 15,
             "precio": 600,
