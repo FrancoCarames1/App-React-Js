@@ -76,6 +76,10 @@
   position: relative;
 }
 
+.contenido-lista a{
+  font-size: inherit;
+}
+
 .contenido-lista::after {
   content: "";
   position: absolute;
