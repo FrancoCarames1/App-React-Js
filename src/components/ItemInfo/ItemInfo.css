@@ -11,6 +11,7 @@
     border-radius: 10px;
     border: solid 1px #547D93;
     background-color: #99E1D9;
+    cursor: pointer;
 }
 
 .contador-items button{
@@ -76,6 +77,7 @@
     border-radius: 10px;
     padding: 1rem;
     text-align: center;
+    cursor: pointer;
 }
 
 .contenedor-opciones a{
@@ -85,7 +87,7 @@
 
 .contenedor-opciones button{
     border: solid 1px #7e9aaa;
-    background-color: #aab9b8;
+    background-color: #b6c4c3bb;
 }
 
 @media (min-width: 500px) {
