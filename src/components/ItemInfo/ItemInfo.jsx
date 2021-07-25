@@ -31,9 +31,7 @@ const ItemInfo = ({ displayItemInfo: item }) => {
 
     };
 
-    const
-
-    return (
+    return(
         <div className="item-info" id={"producto-" + item.id}>
             <div className="contenedor-imagen">
                 <img src={`/img/${item.img}`} alt={item.titulo} />
