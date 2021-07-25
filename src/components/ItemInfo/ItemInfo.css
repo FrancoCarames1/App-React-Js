@@ -59,6 +59,25 @@
     padding: 1rem;
 }
 
+.item-info .contenedor-opciones{
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-content: center;
+}
+
+.contenedor-opciones a, .contenedor-opciones button{
+    display: block;
+    width: auto;
+    margin: 1rem;
+    font-size: 2rem;
+    border-radius: 10px;
+    border: solid 1px #547D93;
+    background-color: #99E1D9;
+}
+
 @media (min-width: 500px) {
     .item-info{
         display: flex;

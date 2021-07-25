@@ -1,10 +1,15 @@
 import React, {useState} from "react";
+import AddingToCartOptions from "./AddingToCartOptions/AddingToCartOptions";
 import ItemCount from "./ItemCount/ItemCount";
 import "./ItemInfo.css";
 
 const ItemInfo = ({ displayItemInfo: item }) => {
 
     const [contador, setContador] = useState(1);
+
+    const [estadoTerminarCompra, setEstadoTerminarCompra] = useState(false);
+
+    const invertirEstado = () => setEstadoTerminarCompra(!estadoTerminarCompra)
 
     const restarUno = () => {
 
@@ -26,6 +31,8 @@ const ItemInfo = ({ displayItemInfo: item }) => {
 
     };
 
+    const
+
     return (
         <div className="item-info" id={"producto-" + item.id}>
             <div className="contenedor-imagen">
@@ -34,7 +41,11 @@ const ItemInfo = ({ displayItemInfo: item }) => {
             <div className="descripcion">
                 <h5>{item.titulo}</h5>
                 <p>{"$ "+item.precio}</p>
-                <ItemCount contador={contador} restarUno={restarUno} sumarUno={sumarUno} />
+                {!estadoTerminarCompra ? (
+                    <ItemCount contador={contador} restarUno={restarUno} sumarUno={sumarUno} invertirEstado={invertirEstado}/>
+                ):(
+                    <AddingToCartOptions invertirEstado={invertirEstado}/>
+                )}
             </div>
         </div>
     )
