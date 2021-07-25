@@ -74,8 +74,18 @@
     margin: 1rem;
     font-size: 2rem;
     border-radius: 10px;
+    padding: 1rem;
+    text-align: center;
+}
+
+.contenedor-opciones a{
     border: solid 1px #547D93;
     background-color: #99E1D9;
+}
+
+.contenedor-opciones button{
+    border: solid 1px #7e9aaa;
+    background-color: #aab9b8;
 }
 
 @media (min-width: 500px) {
