@@ -3,7 +3,7 @@ import { useMemo } from 'react';
 
 const CartContext = React.createContext();
 
-export function CartContext(props) {
+export function CartProvider(props) {
 
     const [cartItems, setCartItems] = useState([]);
 
