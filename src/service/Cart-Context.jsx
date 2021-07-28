@@ -15,18 +15,21 @@ export function CartProvider(props) {
 
     const addCartItem = (itemObject, quantity) => {
 
-        if (cartItems.length === 0){
-            setCartItems.push({id: itemObject.id, productObject: itemObject, productQuantity: quantity});
+        let cartArray = this.state.cartItems;
+
+        if (cartArray.length === 0){
+            cartArray.push({id: itemObject.id, productObject: itemObject, productQuantity: quantity});
         }else{
-            setCartItems.forEach(element => {
+            cartArray.forEach(element => {
                 if(element.id === itemObject.id){
                     element.productQuantity = quantity;
                 }else{
-                    setCartItems.push({id: itemObject.id, productObject: itemObject, productQuantity: quantity});
+                    cartArray.push({id: itemObject.id, productObject: itemObject, productQuantity: quantity});
                 }
             });
         }
-        console.log(setCartItems);
+        setCartItems(cartArray);
+        console.log(cartArray);
     }
 
     const deleteCartItem = (id) => {
