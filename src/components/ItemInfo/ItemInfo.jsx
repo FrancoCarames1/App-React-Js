@@ -9,6 +9,9 @@ const ItemInfo = ({ displayItemInfo: item }) => {
 
     const [estadoTerminarCompra, setEstadoTerminarCompra] = useState(false);
 
+    const objetoObservado = item;
+    console.log(objetoObservado);
+
     const invertirEstado = () => setEstadoTerminarCompra(!estadoTerminarCompra)
 
     const restarUno = () => {
