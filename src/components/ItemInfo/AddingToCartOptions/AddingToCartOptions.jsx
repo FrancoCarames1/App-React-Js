@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useCart } from "../../../service/Context";
+import { useCart } from "../../../service/Cart-Context";
 
 const AddingToCartOptions = ({invertirEstado, item, contador}) =>{
 

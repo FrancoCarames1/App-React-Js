@@ -4,7 +4,7 @@ import "./components/FontAwesomeIcons";
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import ItemInfoContainer from './components/ItemInfo/ItemInfoContainer';
-import {CartProvider, useCart} from './service/Context';
+import {CartProvider, useCart} from './service/Cart-Context';
 
 function App() {
   return (
