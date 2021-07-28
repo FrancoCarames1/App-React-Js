@@ -9,10 +9,13 @@ const ItemInfo = ({ displayItemInfo: item }) => {
 
     const [estadoTerminarCompra, setEstadoTerminarCompra] = useState(false);
 
-    const objetoObservado = item;
-    console.log(objetoObservado);
+    const invertirEstado = () => setEstadoTerminarCompra(!estadoTerminarCompra);
 
-    const invertirEstado = () => setEstadoTerminarCompra(!estadoTerminarCompra)
+    const [itemObservado, setItemObservado] = useState();
+
+    const [cantidadProducto, setCantidadProducto] =useState();
+
+    setItemObservado(item);
 
     const restarUno = () => {
 
@@ -34,6 +37,12 @@ const ItemInfo = ({ displayItemInfo: item }) => {
 
     };
 
+    const pasarCantidadCarro = () => {
+
+        setCantidadProducto(contador)
+
+    }
+
     return(
         <div className="item-info" id={"producto-" + item.id}>
             <div className="contenedor-imagen">
@@ -43,9 +52,9 @@ const ItemInfo = ({ displayItemInfo: item }) => {
                 <h5>{item.titulo}</h5>
                 <p>{"$ "+item.precio}</p>
                 {!estadoTerminarCompra ? (
-                    <ItemCount contador={contador} restarUno={restarUno} sumarUno={sumarUno} invertirEstado={invertirEstado}/>
+                    <ItemCount contador={contador} restarUno={restarUno} sumarUno={sumarUno} invertirEstado={invertirEstado} pasarCantidadCarro={pasarCantidadCarro}/>
                 ):(
-                    <AddingToCartOptions invertirEstado={invertirEstado} item={item} contador={contador}/>
+                    <AddingToCartOptions invertirEstado={invertirEstado} itemProducto={itemObservado} cantidadProducto={cantidadProducto}/>
                 )}
             </div>
         </div>

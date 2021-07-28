@@ -1,6 +1,6 @@
 import React from "react";
 
-const ItemCount = ({ contador, restarUno, sumarUno, invertirEstado}) => {
+const ItemCount = ({ contador, restarUno, sumarUno, invertirEstado, pasarCantidadCarro}) => {
     return(
         <div className="contenedor-botones">
             <div className="contador-items">
@@ -8,7 +8,7 @@ const ItemCount = ({ contador, restarUno, sumarUno, invertirEstado}) => {
                 <p>{contador}</p>
                 <button onClick={sumarUno}>+</button>
             </div>
-            <button className="agregar-carrito" onClick={invertirEstado}>Agregar al carrito</button>
+            <button className="agregar-carrito" onClick={invertirEstado,pasarCantidadCarro}>Agregar al carrito</button>
         </div>
     );
 };
