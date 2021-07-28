@@ -42,7 +42,7 @@ const ItemInfo = ({ displayItemInfo: item }) => {
                 {!estadoTerminarCompra ? (
                     <ItemCount contador={contador} restarUno={restarUno} sumarUno={sumarUno} invertirEstado={invertirEstado}/>
                 ):(
-                    <AddingToCartOptions invertirEstado={invertirEstado}/>
+                    <AddingToCartOptions invertirEstado={invertirEstado} item={item} contador={contador}/>
                 )}
             </div>
         </div>

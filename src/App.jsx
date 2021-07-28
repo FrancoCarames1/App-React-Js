@@ -4,6 +4,7 @@ import "./components/FontAwesomeIcons";
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import ItemInfoContainer from './components/ItemInfo/ItemInfoContainer';
+import {CartContext, useCart} from './service/Context';
 
 function App() {
   return (
@@ -40,4 +41,4 @@ function App() {
   );
 }
 
-export default App;
+export default ()=> <CartContext><App></App></CartContext>

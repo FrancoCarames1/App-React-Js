@@ -1,12 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useCart } from "../../../service/Context";
 
-const AddingToCartOptions = ({invertirEstado}) =>{
+const AddingToCartOptions = ({invertirEstado, item, contador}) =>{
+
+    const {addCartItem} = useCart();
+
     return(
         <div className="contenedor-opciones">
-            <Link to="/">Agregar y seguir comprando</Link>
+            <Link to="/" onClick={addCartItem(item, contador)}>Agregar y seguir comprando</Link>
             <button onClick={invertirEstado}>Modificar cantidad</button>
-            <Link to="/cart">Finalizar compras</Link>
+            <Link to="/cart" onClick={addCartItem(item,contador)}>Finalizar compras</Link>
         </div>
     )
 }
