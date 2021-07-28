@@ -19,17 +19,25 @@ export function CartProvider(props) {
 
         if (cartArray.length === 0){
             cartArray.push({id: itemObject.id, productObject: itemObject, productQuantity: quantity});
+            setCartItems(cartArray);
         }else{
+            let encontroItem = false;
+
             cartArray.forEach(element => {
                 if(element.id === itemObject.id){
                     element.productQuantity = quantity;
-                }else{
-                    cartArray.push({id: itemObject.id, productObject: itemObject, productQuantity: quantity});
+                    encontroItem = true;
                 }
             });
+
+            if(encontroItem === "false"){
+                cartArray.push({id: itemObject.id, productObject: itemObject, productQuantity: quantity});
+            } else {
+                console.log("Ya existia el item y se modifico la cantidad a pedir")
+            }
+            setCartItems(cartArray);
+            console.log(cartArray);
         }
-        setCartItems(cartArray);
-        console.log(cartArray);
     }
 
     const deleteCartItem = (id) => {
