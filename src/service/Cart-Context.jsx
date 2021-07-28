@@ -41,8 +41,10 @@ export function CartProvider(props) {
     }
 
     const deleteCartItem = (id) => {
-        const positionToDelete = cartItems.findIndex( element => element.id === id);
-        setCartItems.splice(positionToDelete,1);
+        let cartArray = cartItems;
+        const positionToDelete = cartArray.findIndex( element => element.id === id);
+        cartArray.splice(positionToDelete,1);
+        setCartItems(cartArray);
     }
 
     const value = useMemo(() => {
