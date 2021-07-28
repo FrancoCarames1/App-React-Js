@@ -1,16 +1,23 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, useParams } from "react-router-dom";
 import { useCart } from "../../../service/Cart-Context";
+import {productosArray} from "../../../productos/productosArray.json";
 
-const AddingToCartOptions = ({invertirEstado, itemProducto, cantidadProducto}) =>{
+const AddingToCartOptions = ({invertirEstado, cantidadProducto}) =>{
 
     const {addCartItem} = useCart();
 
+    const {id: idProducto} = useParams();
+
+    const [informacionProducto, setInformacionProducto] = useState();
+
+    setInformacionProducto(productosArray.find((item)=> item.id.toString() === idProducto))
+
     return(
         <div className="contenedor-opciones">
-            <Link to="/" onClick={addCartItem.bind(itemProducto, cantidadProducto)}>Agregar y seguir comprando</Link>
+            <Link to="" onClick={addCartItem.bind(informacionProducto, cantidadProducto)}>Agregar y seguir comprando</Link>
             <button onClick={invertirEstado}>Modificar cantidad</button>
-            <Link to="/cart" onClick={addCartItem.bind(itemProducto, cantidadProducto)}>Finalizar compras</Link>
+            <Link to="/cart" onClick={addCartItem.bind(informacionProducto, cantidadProducto)}>Finalizar compras</Link>
         </div>
     )
 }

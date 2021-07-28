@@ -13,6 +13,8 @@ export function CartProvider(props) {
 
     }
 
+    //Volver a escribir addCartItem primero con una función que verifique si está el item y si esta solo modificar el valor, sino agregar el item (Hace demasiados render)
+
     const addCartItem = (itemObject, quantity) => {
 
         let cartArray = cartItems;
