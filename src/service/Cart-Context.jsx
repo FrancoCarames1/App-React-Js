@@ -15,7 +15,7 @@ export function CartProvider(props) {
 
     const addCartItem = (itemObject, quantity) => {
 
-        let cartArray = this.state.cartItems;
+        let cartArray = cartItems;
 
         if (cartArray.length === 0){
             cartArray.push({id: itemObject.id, productObject: itemObject, productQuantity: quantity});
