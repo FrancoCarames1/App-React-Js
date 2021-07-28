@@ -41,4 +41,4 @@ function App() {
   );
 }
 
-export default ()=> <CartContext><App></App></CartContext>
+export default ()=> <CartProvider><App></App></CartProvider>
