@@ -8,9 +8,9 @@ const AddingToCartOptions = ({invertirEstado, item, contador}) =>{
 
     return(
         <div className="contenedor-opciones">
-            <Link to="/" onClick={this.addCartItem.bind(item, contador)}>Agregar y seguir comprando</Link>
+            <Link to="/" onClick={addCartItem.bind(item, contador)}>Agregar y seguir comprando</Link>
             <button onClick={invertirEstado}>Modificar cantidad</button>
-            <Link to="/cart" onClick={this.addCartItem.bind(item,contador)}>Finalizar compras</Link>
+            <Link to="/cart" onClick={addCartItem.bind(item,contador)}>Finalizar compras</Link>
         </div>
     )
 }
