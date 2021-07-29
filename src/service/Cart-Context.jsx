@@ -1,9 +1,8 @@
-import React, {useState, useEffect} from 'react';
-import { useMemo } from 'react';
+import React, {useState} from 'react';
 
-const CartContext = React.createContext();
+export const CartContext = React.createContext();
 
-export function CartProvider(props) {
+export const CartProvider = ({children}) => {
 
     const [cartItems, setCartItems] = useState([]);
 
@@ -13,33 +12,42 @@ export function CartProvider(props) {
 
     }
 
-    //Volver a escribir addCartItem primero con una función que verifique si está el item y si esta solo modificar el valor, sino agregar el item (Hace demasiados render)
+    const itemInCart = (idBuscado) => {
+        let posicionItem = cartItems.findIndex(x => x.id === idBuscado);
+        return posicionItem;
+    }
 
     const addCartItem = (itemObject, quantity) => {
 
-        let cartArray = cartItems;
+        let funcionBusqueda = itemInCart(itemObject.id)
 
-        if (cartArray.length === 0){
-            cartArray.push({id: itemObject.id, productObject: itemObject, productQuantity: quantity});
-            setCartItems(cartArray);
+        if (funcionBusqueda === -1){
+            setCartItems([...cartItems,{id: itemObject.id, item: itemObject, cantidad: quantity}])
         }else{
-            let encontroItem = false;
-
-            cartArray.forEach(element => {
-                if(element.id === itemObject.id){
-                    element.productQuantity = quantity;
-                    encontroItem = true;
-                }
-            });
-
-            if(encontroItem === "false"){
-                cartArray.push({id: itemObject.id, productObject: itemObject, productQuantity: quantity});
-            } else {
-                console.log("Ya existia el item y se modifico la cantidad a pedir")
-            }
-            setCartItems(cartArray);
-            console.log(cartArray);
+            let corregirCantidad = cartItems;
+            corregirCantidad[funcionBusqueda].cantidad = quantity
         }
+
+        // let cartArray = cartItems;
+        // console.log(itemObject)
+        // console.log(quantity)
+
+        // let encontroItem = false;
+
+        // cartArray.forEach(element => {
+        //     if(element.id === itemObject.id){
+        //         element.productQuantity = quantity;
+        //         encontroItem = true;
+        //     }
+        // });
+
+        // if(encontroItem === "false"){
+        //     cartArray.push({id: itemObject.id, productObject: itemObject, productQuantity: quantity});
+        //     setCartItems(cartArray);
+        // } else {
+        //     console.log("Ya existia el item y se modifico la cantidad a pedir")
+        //     setCartItems(cartArray);
+        // }
     }
 
     const deleteCartItem = (id) => {
@@ -49,22 +57,5 @@ export function CartProvider(props) {
         setCartItems(cartArray);
     }
 
-    const value = useMemo(() => {
-        return ({
-            cartItems,
-            clearCart,
-            deleteCartItem,
-            addCartItem
-        })
-    }, [cartItems])
-
-    return <CartContext.Provider value={value} {...props} />
-}
-
-export function useCart() {
-    const context = React.useContext(CartContext);
-    if (!context) {
-        throw new Error('useCart debe estar dentro del proveedor CartContext')
-    }
-    return context;
-}
+    return (<CartContext.Provider value={{cartItems,clearCart, deleteCartItem, addCartItem}}>{children}</CartContext.Provider>);
+};

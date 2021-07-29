@@ -1,9 +1,12 @@
-import React, {useState} from "react";
-import AddingToCartOptions from "./AddingToCartOptions/AddingToCartOptions";
+import React, {useState, useContext} from "react";
+import { Link } from "react-router-dom";
+import { CartContext } from "../../service/Cart-Context";
 import ItemCount from "./ItemCount/ItemCount";
 import "./ItemInfo.css";
 
 const ItemInfo = ({ displayItemInfo: item }) => {
+
+    const {addCartItem} = useContext(CartContext);
 
     const [contador, setContador] = useState(1);
 
@@ -31,6 +34,10 @@ const ItemInfo = ({ displayItemInfo: item }) => {
 
     };
 
+    const activarAddCartItem = () =>{
+        addCartItem(item, contador)
+    }
+
     return(
         <div className="item-info" id={"producto-" + item.id}>
             <div className="contenedor-imagen">
@@ -42,7 +49,11 @@ const ItemInfo = ({ displayItemInfo: item }) => {
                 {!estadoTerminarCompra ? (
                     <ItemCount contador={contador} restarUno={restarUno} sumarUno={sumarUno} invertirEstado={invertirEstado}/>
                 ):(
-                    <AddingToCartOptions invertirEstado={invertirEstado} itemProducto={item} cantidadProducto={contador}/>
+                    <div className="contenedor-opciones">
+                        <Link to="/" onClick={activarAddCartItem}>Agregar y seguir comprando</Link>
+                        <button onClick={invertirEstado}>Modificar cantidad</button>
+                        <Link onClick={activarAddCartItem}>Finalizar compras</Link>
+                    </div>
                 )}
             </div>
         </div>
