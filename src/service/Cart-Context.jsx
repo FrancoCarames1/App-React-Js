@@ -27,27 +27,6 @@ export const CartProvider = ({children}) => {
             let corregirCantidad = cartItems;
             corregirCantidad[funcionBusqueda].cantidad = quantity
         }
-
-        // let cartArray = cartItems;
-        // console.log(itemObject)
-        // console.log(quantity)
-
-        // let encontroItem = false;
-
-        // cartArray.forEach(element => {
-        //     if(element.id === itemObject.id){
-        //         element.productQuantity = quantity;
-        //         encontroItem = true;
-        //     }
-        // });
-
-        // if(encontroItem === "false"){
-        //     cartArray.push({id: itemObject.id, productObject: itemObject, productQuantity: quantity});
-        //     setCartItems(cartArray);
-        // } else {
-        //     console.log("Ya existia el item y se modifico la cantidad a pedir")
-        //     setCartItems(cartArray);
-        // }
     }
 
     const deleteCartItem = (id) => {
