@@ -8,7 +8,9 @@ export const CartProvider = ({children}) => {
 
     useEffect(()=>{
         cantidadItemsCarrito();
-    },[cartItems]);
+    },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [cartItems]);
 
     const clearCart = () => {
 

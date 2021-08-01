@@ -22,7 +22,9 @@ const ItemInfoContainer= () => {
     useEffect(() => {
         getItemsInfo().then((result) => setDisplayItemInfo(result)); //Llama la función y después en el display escribe el item 
         setLoading(true);
-    }, [idParams]);
+    },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [idParams]);
 
     return(!loading && <ItemInfo displayItemInfo={displayItemInfo}/>);
 };
