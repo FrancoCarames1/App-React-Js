@@ -5,7 +5,7 @@ import CarritoDisplay from "./CarritoDisplay";
 
 const CarritoContainer = () => {
 
-    const {deleteCartItem, clearCart, cartItems, montoFinal,cantidadItemsCarrito} = useContext(CartContext);
+    const {deleteCartItem, clearCart, cartItems, montoFinal,cantidadFinalItems} = useContext(CartContext);
 
     return(
         <>
@@ -20,7 +20,7 @@ const CarritoContainer = () => {
                             <CarritoDisplay item={item} key={item.id}/>
                     ))}
                     <h5>Monto Final: {montoFinal()}</h5>
-                    <h5>Cantidad total: {cantidadItemsCarrito()}</h5>                
+                    <h5>Cantidad total: {cantidadFinalItems}</h5>                
                 </>
             )}
         </>

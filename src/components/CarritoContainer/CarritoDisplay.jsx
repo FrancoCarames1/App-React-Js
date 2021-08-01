@@ -7,8 +7,8 @@ const CarritoDisplay = ({item}) => {
     const {deleteCartItem, clearCart, cartItems} = useContext(CartContext);
 
     return(
-        <Link to={`/${item.categoria}/${item.id}`}>
             <div className="">
+                <button onClick={deleteCartItem.bind(item.id)}>X</button>
                 <div className="imagen-producto">
                     <img src={`/img/${item.img}`} alt={item.titulo} />
                 </div>
@@ -18,7 +18,6 @@ const CarritoDisplay = ({item}) => {
                     <p>{"Total: $ "+ (item.precio*item.cantidad)}</p>
                 </div>
             </div>
-        </Link>
     );
 };
 
