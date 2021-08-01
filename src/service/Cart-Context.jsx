@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 
 export const CartContext = React.createContext();
 
@@ -6,9 +6,14 @@ export const CartProvider = ({children}) => {
 
     const [cartItems, setCartItems] = useState([]);
 
+    useEffect(()=>{
+        cantidadItemsCarrito();
+    },[cartItems]);
+
     const clearCart = () => {
 
         setCartItems([]);
+        cantidadItemsCarrito();
 
     }
 
@@ -28,10 +33,13 @@ export const CartProvider = ({children}) => {
                 enumerable: true,
                 configurable: true
             });
-            setCartItems([...cartItems,itemObject])
+            setCartItems([...cartItems,itemObject]);
+            cantidadItemsCarrito();
         }else{
             let corregirCantidad = cartItems;
             corregirCantidad[funcionBusqueda].cantidad = quantity;
+            setCartItems(corregirCantidad);
+            cantidadItemsCarrito();
         }
     }
 
@@ -40,6 +48,7 @@ export const CartProvider = ({children}) => {
         const positionToDelete = cartArray.findIndex( element => element.id === id);
         cartArray.splice(positionToDelete,1);
         setCartItems(cartArray);
+        cantidadItemsCarrito();
     }
 
     const montoFinal = () => {
@@ -50,17 +59,19 @@ export const CartProvider = ({children}) => {
         return monto
     }
 
+    const [cantidadFinalItems, setCantidadFinalItems] = useState(0);
+
     const cantidadItemsCarrito = () =>{
         let cantidadCarrito = 0;
         if (cartItems.length === 0) {
-            return cantidadCarrito;
+            setCantidadFinalItems(cantidadCarrito);
         }else{
             cartItems.forEach(item => {
                 cantidadCarrito = cantidadCarrito + item.cantidad;
             });
-            return cantidadCarrito
+            setCantidadFinalItems(cantidadCarrito);
         }
     }
 
-    return (<CartContext.Provider value={{cartItems,clearCart, deleteCartItem, addCartItem, montoFinal, cantidadItemsCarrito}}>{children}</CartContext.Provider>);
+    return (<CartContext.Provider value={{cartItems,clearCart, deleteCartItem, addCartItem, montoFinal, cantidadFinalItems}}>{children}</CartContext.Provider>);
 };
