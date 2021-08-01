@@ -5,6 +5,7 @@ import ItemListContainer from "./components/ItemListContainer/ItemListContainer"
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import ItemInfoContainer from './components/ItemInfo/ItemInfoContainer';
 import {CartProvider} from './service/Cart-Context';
+import CarritoContainer from './components/CarritoContainer/CarritoContainer';
 
 function App() {
   return (
@@ -35,6 +36,9 @@ function App() {
             </Route>
             <Route exact path="/:item/:id">
               <ItemInfoContainer/>
+            </Route>
+            <Route exact path="/carrito">
+              <CarritoContainer/>
             </Route>
           </main>
         </Switch>  

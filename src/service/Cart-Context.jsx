@@ -19,13 +19,19 @@ export const CartProvider = ({children}) => {
 
     const addCartItem = (itemObject, quantity) => {
 
-        let funcionBusqueda = itemInCart(itemObject.id)
+        let funcionBusqueda = itemInCart(itemObject.id);
 
         if (funcionBusqueda === -1){
-            setCartItems([...cartItems,{id: itemObject.id, item: itemObject, cantidad: quantity}])
+            Object.defineProperty(itemObject, 'cantidad', {
+                value: quantity,
+                writable: true,
+                enumerable: true,
+                configurable: true
+            });
+            setCartItems([...cartItems,itemObject])
         }else{
             let corregirCantidad = cartItems;
-            corregirCantidad[funcionBusqueda].cantidad = quantity
+            corregirCantidad[funcionBusqueda].cantidad = quantity;
         }
     }
 
@@ -36,5 +42,25 @@ export const CartProvider = ({children}) => {
         setCartItems(cartArray);
     }
 
-    return (<CartContext.Provider value={{cartItems,clearCart, deleteCartItem, addCartItem}}>{children}</CartContext.Provider>);
+    const montoFinal = () => {
+        let monto = 0
+        cartItems.forEach(item => {
+            monto = monto + item.cantidad * item.precio
+        });
+        return monto
+    }
+
+    const cantidadItemsCarrito = () =>{
+        let cantidadCarrito = 0;
+        if (cartItems.length === 0) {
+            return cantidadCarrito;
+        }else{
+            cartItems.forEach(item => {
+                cantidadCarrito = cantidadCarrito + item.cantidad;
+            });
+            return cantidadCarrito
+        }
+    }
+
+    return (<CartContext.Provider value={{cartItems,clearCart, deleteCartItem, addCartItem, montoFinal, cantidadItemsCarrito}}>{children}</CartContext.Provider>);
 };

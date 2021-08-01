@@ -60,9 +60,14 @@
   order: 2;
 }
 
-.link-carro {
+.link-carro{
   order: 3;
   display: inline-block;
+}
+
+.link-carro a{
+  font-size: inherit;
+  position: relative;
 }
 
 .contenido-lista {

@@ -38,7 +38,7 @@ const Navbar = () => {
                 {categorias.map((cat) =>(
                     <li className="contenido-lista" id={`lista${cat.id}`}><Link to={`/${cat.titulo}`}>{cat.titulo}</Link></li>
                 ))}
-                <li className="link-carro"><CartWidget/></li>
+                <li className="link-carro"><Link to="/carrito"><CartWidget/></Link></li>
                 <li className="toggle" onClick={desplegarLista}><HamburguerMenu/></li>
             </ul>
         </nav>

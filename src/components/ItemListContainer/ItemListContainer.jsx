@@ -4,7 +4,7 @@ import ItemList from "./ItemList";
 import {productosArray} from "../../productos/productosArray.json";
 import { useParams } from "react-router-dom";
 
-const Bienvenida = () => {
+const ItemListContainer = () => {
 
     const [displayItems, setDisplayItems] = useState([]);
 
@@ -35,4 +35,4 @@ const Bienvenida = () => {
     );
 };
 
-export default Bienvenida;
+export default ItemListContainer;
