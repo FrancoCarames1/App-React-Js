@@ -63,11 +63,25 @@
 .link-carro{
   order: 3;
   display: inline-block;
+  position: relative;
+  margin-right: 1rem ;
+}
+
+.contador-items-carrito{
+  font-size: 1.3rem;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 5px;
+  background-color: rgba(255, 0, 0, 0.884);
+  color: white;
+  position: absolute;
+  top: 5px;
+  right: 0;
+  border-radius: 0.5rem;
+  font-weight: bold;
 }
 
 .link-carro a{
   font-size: inherit;
-  position: relative;
 }
 
 .contenido-lista {
@@ -125,7 +139,7 @@
   cursor: pointer;
 }
 
-@media all and (min-width: 850px) {
+@media all and (min-width: 860px) {
   .lista-plegable {
     justify-content: center;
   }

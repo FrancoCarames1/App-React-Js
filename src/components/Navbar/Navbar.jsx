@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import './Navbar.css';
 import CartWidget from "../CartWidget/CartWidget";
 import { Link } from "react-router-dom";
 import HamburguerMenu from "../HamburgerMenu/HamburguerMenu";
 import {categorias} from "../../productos/productosArray.json";
+import {CartContext} from "../../service/Cart-Context";
+
 
 const Navbar = () => {
 
@@ -31,6 +33,9 @@ const Navbar = () => {
 
     }
 
+    const {cantidadFinalItems} = useContext(CartContext);
+
+
     return (
         <nav className="barra-nav">
             <ul className="lista-plegable">
@@ -38,7 +43,16 @@ const Navbar = () => {
                 {categorias.map((cat) =>(
                     <li className="contenido-lista" id={`lista${cat.id}`}><Link to={`/productos/${cat.titulo}`}>{cat.titulo}</Link></li>
                 ))}
-                <li className="link-carro"><Link to="/carrito"><CartWidget/></Link></li>
+                <li className="link-carro">
+                    <Link to="/carrito">
+                        <CartWidget/>
+                    </Link>
+                    {(cantidadFinalItems > 0) ? (
+                        <div className="contador-items-carrito">
+                            {cantidadFinalItems}
+                        </div>
+                    ):(<></>)}
+                </li>
                 <li className="toggle" onClick={desplegarLista}><HamburguerMenu/></li>
             </ul>
         </nav>
