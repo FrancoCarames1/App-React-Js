@@ -52,7 +52,7 @@ const ItemInfo = ({ displayItemInfo: item }) => {
                     <div className="contenedor-opciones">
                         <Link to="/" onClick={activarAddCartItem}>Agregar y seguir comprando</Link>
                         <button onClick={invertirEstado}>Modificar cantidad</button>
-                        <Link onClick={activarAddCartItem}>Finalizar compras</Link>
+                        <Link to="/carrito" onClick={activarAddCartItem}>Finalizar compras</Link>
                     </div>
                 )}
             </div>
