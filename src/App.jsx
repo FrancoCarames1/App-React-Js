@@ -20,10 +20,10 @@ function App() {
             <Route exact path="/">
               <DisplayMainView/>
             </Route>
-            <Route exact path="/:categoria">
+            <Route exact path="/productos/:categoria">
                 <DisplayCategoria/>
             </Route>
-            <Route exact path="/:item/:id">
+            <Route exact path="/productos/:categoria/:id">
               <ItemInfoContainer/>
             </Route>
             <Route exact path="/carrito">
