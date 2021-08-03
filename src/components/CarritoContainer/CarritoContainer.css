@@ -1,0 +1,27 @@
+.display-carrito{
+    width: 80%;
+    margin: 2rem auto 1rem;
+}
+
+.display-carrito h5{
+    font-size: 2rem;
+    text-align: center;
+}
+
+.display-carrito a{
+    display: block;
+    width: 22rem;
+    font-size: 1.6rem;
+    margin: 1rem auto;
+    padding: 5px;
+    border-radius: 10px;
+    border: solid 1px #547D93;
+    background-color: #99E1D9;
+    cursor: pointer;
+    text-align: center;
+}
+
+.display-carrito img{
+    display: block;
+    margin: 1rem auto;
+}

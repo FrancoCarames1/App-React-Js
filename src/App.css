@@ -23,14 +23,17 @@ header{
   height: 10rem;
 }
 
-main .bienvenida h2{
+.bienvenida{
+  margin: 0 1rem;
+}
+
+.bienvenida h2{
   font-size: 2.5rem;
-  margin-top: 2rem;
-  margin-bottom: 1.5rem;
+  margin: 2rem auto;
   text-align: center;
 }
 
-main .bienvenida h5{
+.bienvenida h5{
   font-size: 2rem;
   margin-top: 0;
   text-align: center;
