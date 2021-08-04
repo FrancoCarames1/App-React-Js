@@ -1,3 +1,4 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useContext} from "react";
 import { CartContext } from "../../service/Cart-Context";
 
@@ -7,7 +8,6 @@ const CarritoDisplay = ({item}) => {
 
     return(
             <div className="producto-carrito">
-                <button onClick={deleteCartItem.bind(item.id)}>X</button>
                 <div className="imagen-producto">
                     <img src={`/img/${item.img}`} alt={item.titulo} />
                 </div>
@@ -15,6 +15,7 @@ const CarritoDisplay = ({item}) => {
                     <h5>{item.titulo}</h5>
                     <p>Cantidad: {item.cantidad}</p>
                     <p>{"Total: $ "+ (item.precio*item.cantidad)}</p>
+                    <button className="boton-borrar-item" onClick={deleteCartItem.bind(item.id)}><FontAwesomeIcon icon="trash-alt"/></button>
                 </div>
             </div>
     );

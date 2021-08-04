@@ -139,7 +139,7 @@
   cursor: pointer;
 }
 
-@media all and (min-width: 860px) {
+@media all and (min-width: 883px) {
   .lista-plegable {
     justify-content: center;
   }

@@ -11,7 +11,7 @@ const CarritoContainer = () => {
     return(
         <>
             {!cartItems.length ? (
-                <div className="display-carrito">
+                <div className="display-carrito-vacio">
                     <h5>El carrito está vacío, nosotros te ayudamos...</h5>
                     <Link to="/">¡Vamos a llenar ese carro!</Link>
                     <img src="http://pa1.narvii.com/6125/cd9c4955b053b42bb2825715bfadea26ce2604bb_00.gif" alt="Panda millonario" />
