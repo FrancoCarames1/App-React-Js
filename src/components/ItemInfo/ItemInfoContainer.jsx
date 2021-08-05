@@ -17,7 +17,7 @@ const ItemInfoContainer= () => {
                 .doc(idParams)
                 .get().then((doc) => {
                     if (doc.exists) {
-                        setArrayConItem([doc.data()]);
+                        setArrayConItem([{...doc.data(), id: idParams}]);
     }})}
 
     useEffect(() => {
