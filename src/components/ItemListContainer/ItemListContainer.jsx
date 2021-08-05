@@ -1,36 +1,63 @@
-import React, { useState , useEffect} from "react";
+import React, { useState } from "react";
 import "./ItemListContainer.css";
 import ItemList from "./ItemList";
-import {productosArray} from "../../productos/productosArray.json";
 import { useParams } from "react-router-dom";
+import { database } from "../../firebase/firebase";
+import { useEffect } from "react";
 
 const ItemListContainer = () => {
 
-    const [displayItems, setDisplayItems] = useState([]);
+    const [productosArray, setProductosArray] = useState([]);
 
     const {categoria: activeCategory} = useParams();
 
-    useEffect(()=>{
+    console.log(activeCategory)
 
-        const getCategoryItems = () => {
-            return new Promise ((resolve) => {
-                setTimeout(() => {
-                    if (activeCategory){
-                        let productosFiltrados = productosArray.filter((item) => item.categoria.includes(activeCategory));
-                        resolve(productosFiltrados);
-                    }else{
-                        resolve(productosArray);
-                    }
-                }, 2000);
-            });
+    const obtenerProductos = () => {
+
+        console.log(typeof activeCategory);
+
+        if (typeof activeCategory === 'undefined'){
+
+            const productos = database
+                .collection("productos");
+
+            productos.get().then((query) => 
+
+                setProductosArray(query.docs.map((doc) => {
+                    return {...doc.data(), id: doc.id}
+                })))
+
+        }else{
+
+            const productos = database
+                .collection("productos")
+                .where("categoria", "==", activeCategory);
+
+            productos.get().then((query) => 
+
+            setProductosArray(query.docs.map((doc) => {
+                return {...doc.data(), id: doc.id}
+            }))
+            
+            )
+
         }
+    }
 
-        getCategoryItems().then((result) => setDisplayItems(result));
-    }, [activeCategory]);
+    useEffect(() =>{
+        obtenerProductos();
+    },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [activeCategory])
 
     return(
         <div className="productos">
-            <ItemList displayItems ={displayItems}/>
+            {productosArray.length ? (
+                <ItemList displayItems ={productosArray}/>
+            ) : (
+                <h3>Loading...</h3>
+            )}
         </div>
     );
 };

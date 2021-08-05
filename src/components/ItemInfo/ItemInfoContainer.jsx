@@ -1,32 +1,33 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
-import {productosArray} from "../../productos/productosArray.json";
 import ItemInfo from "./ItemInfo";
+import { database} from "../../firebase/firebase";
+
 
 const ItemInfoContainer= () => {
 
-    const [displayItemInfo, setDisplayItemInfo] = useState([]);
-    const [loading, setLoading] = useState(true);
-
     const {id: idParams} = useParams(); // Lee el enrutado y toma el id
 
+    const [arrayConItem, setArrayConItem] = useState([]);
+
     const getItemsInfo = () => {
-        return new Promise((resolve) =>{
-            setTimeout(()=>{
-                resolve(productosArray.find((item)=> item.id.toString() === idParams));
-                setLoading(false);
-            }, 2000);
-        });
-    }
+
+            const productos = database
+                .collection("productos")
+                .doc(idParams)
+                .get().then((doc) => {
+                    if (doc.exists) {
+                        setArrayConItem([doc.data()]);
+    }})}
 
     useEffect(() => {
-        getItemsInfo().then((result) => setDisplayItemInfo(result)); //Llama la función y después en el display escribe el item 
-        setLoading(true);
+        getItemsInfo();
+        console.log(arrayConItem)
     },
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [idParams]);
 
-    return(!loading && <ItemInfo displayItemInfo={displayItemInfo}/>);
+    return(<>{arrayConItem.length ? ( <ItemInfo displayItemInfo={arrayConItem[0]}/>):( <h3>Loading...</h3>)}</>);
 };
 
 export default ItemInfoContainer;

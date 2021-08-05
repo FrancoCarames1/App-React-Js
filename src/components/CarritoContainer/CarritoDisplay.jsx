@@ -9,7 +9,7 @@ const CarritoDisplay = ({item}) => {
     return(
             <div className="producto-carrito">
                 <div className="imagen-producto">
-                    <img src={`/img/${item.img}`} alt={item.titulo} />
+                    <img src={`${item.img}`} alt={item.titulo} />
                 </div>
                 <div className="descripcion-producto">
                     <h5>{item.titulo}</h5>

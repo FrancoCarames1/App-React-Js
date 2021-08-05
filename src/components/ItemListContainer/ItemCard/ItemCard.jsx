@@ -7,7 +7,7 @@ const ItemCard = ({item}) => {
         <Link to={`/productos/${item.categoria}/${item.id}`}>
             <div className="item" id={"producto-" + item.id}>
                 <div className="imagen-producto">
-                    <img src={`/img/${item.img}`} alt={item.titulo} />
+                    <img src={`${item.img}`} alt={item.titulo} />
                 </div>
                 <div className="item-preview">
                     <h5>{item.titulo}</h5>

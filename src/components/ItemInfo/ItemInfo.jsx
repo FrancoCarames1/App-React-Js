@@ -39,9 +39,9 @@ const ItemInfo = ({ displayItemInfo: item }) => {
     }
 
     return(
-        <div className="item-info" id={"producto-" + item.id}>
+        <div className="item-info">
             <div className="contenedor-imagen">
-                <img src={`/img/${item.img}`} alt={item.titulo} />
+                <img src={`${item.img}`} alt={item.titulo} />
             </div>
             <div className="descripcion">
                 <h5>{item.titulo}</h5>
