@@ -5,13 +5,13 @@ const DisplayMainView = () => {
 
     return(
         <>
-            <section className="bienvenida">
-                <h2>いらっしゃいませ！ - Irasshaimase! - ¡Bienvenido!</h2>
+            <div className="bienvenida">
+                <h2>いらっしゃいませ - Irasshaimase - Bienvenido</h2>
                 <h5>Esperamos que encuentres algo de tu gusto &#128521;</h5>
-            </section>
-            <section>
+            </div>
+            <div>
                 <ItemListContainer />
-            </section>
+            </div>
         </>
     )
 
