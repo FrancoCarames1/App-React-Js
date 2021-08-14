@@ -1,3 +1,6 @@
+.cargando{
+    margin-top: 12rem;
+}
 
 .contador-items{
     display: flex;
@@ -98,7 +101,6 @@
         width: 50%;
         display: flex;
         justify-content: center;
-        border-bottom: none;
         border-right: 1px solid #f0f7f45b;
     }
     .item-info .descripcion{
@@ -112,6 +114,8 @@
     }
     .item-info .contenedor-imagen img{
         padding: 1.5rem;
+        border-radius: 1rem 0 0 1rem ;
+        border-bottom: none;
     }
 }
 

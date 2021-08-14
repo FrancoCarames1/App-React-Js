@@ -1,0 +1,45 @@
+@import url(https://fonts.googleapis.com/css?family=Redressed);
+
+.container_eye{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.eye {
+  margin: 1rem auto;
+  display: block;
+  background-color: #640606;
+  position: absolute;
+  border: 5px solid #000000;
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+}
+.sharingan {
+  position: relative;
+  animation: loader 2s infinite linear;
+}
+#pupil {
+  fill: black;
+}
+#iris {
+  stroke-width: 8px;
+  stroke: rgba(60, 6, 6, 0.75);
+  fill: rgba(60, 6, 6, 0.9);
+}
+.iris_anomaly {
+  fill: black;
+  font-size: 100px;
+  font-family: "Redressed", cursive;
+}
+
+@keyframes loader {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}

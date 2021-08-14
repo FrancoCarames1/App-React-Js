@@ -7,6 +7,7 @@
   padding: 0rem;
   width: 100%;
   font-family: "Bangers", monospace;
+  z-index: 1;
 }
 
 .barra-nav:hover {
@@ -177,10 +178,6 @@
   }
 
   #lista4:hover::after {
-    transform: scaleX(0.9);
-  }
-
-  #lista5:hover::after {
     transform: scaleX(0.9);
   }
 }

@@ -4,6 +4,7 @@ import ItemList from "./ItemList";
 import { useParams } from "react-router-dom";
 import { database } from "../../firebase/firebase";
 import { useEffect } from "react";
+import Loader from "../Loader/Loader";
 
 const ItemListContainer = () => {
 
@@ -56,7 +57,7 @@ const ItemListContainer = () => {
             {productosArray.length ? (
                 <ItemList displayItems ={productosArray}/>
             ) : (
-                <h3>Loading...</h3>
+                <Loader/>
             )}
         </div>
     );

@@ -11,24 +11,21 @@ const Navbar = () => {
 
     const desplegarLista = () => {
 
-        const contenido5 = document.getElementById("lista5");
         const contenido4 = document.getElementById("lista4");
         const contenido3 = document.getElementById("lista3");
         const contenido2 = document.getElementById("lista2");
         const contenido1 = document.getElementById("lista1");
 
-        if(contenido5.classList.contains("active")){
+        if(contenido4.classList.contains("active")){
             contenido1.classList.toggle('active');
             contenido2.classList.toggle('active');
             contenido3.classList.toggle('active');
             contenido4.classList.toggle('active');
-            contenido5.classList.toggle('active');
         }else{
             contenido1.classList.toggle('active');
             contenido2.classList.toggle('active');
             contenido3.classList.toggle('active');
             contenido4.classList.toggle('active');
-            contenido5.classList.toggle('active');
         }
 
     }

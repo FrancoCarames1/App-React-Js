@@ -1,31 +1,4 @@
 {
-    "productosArray":
-    [
-        {
-            "id": 1,
-            "titulo": "Póster de Luffy (Wanted)",
-            "img": "PosterWantedLuffy.jpg",
-            "stock": 5,
-            "precio": 800,
-            "categoria": "decoraciones"
-        },
-        {
-            "id": 2,
-            "titulo": "Buzo Nubes de akatsuki",
-            "img": "BuzoAkatsuki.png",
-            "stock": 10,
-            "precio": 5000,
-            "categoria": "indumentaria"
-        },
-        {
-            "id": 3,
-            "titulo": "Bandana de Naruto",
-            "img": "BandaDeNaruto.jpg",
-            "stock": 15,
-            "precio": 600,
-            "categoria": "indumentaria"
-        }
-    ],
     "categorias":
     [
         {
@@ -43,10 +16,6 @@
         {
             "id": 4,
             "titulo": "decoraciones"
-        },
-        {
-            "id": 5,
-            "titulo": "contacto"
         }
     ]
 }
