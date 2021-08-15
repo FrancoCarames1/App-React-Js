@@ -12,11 +12,7 @@ const ItemListContainer = () => {
 
     const {categoria: activeCategory} = useParams();
 
-    console.log(activeCategory)
-
     const obtenerProductos = () => {
-
-        console.log(typeof activeCategory);
 
         if (typeof activeCategory === 'undefined'){
 

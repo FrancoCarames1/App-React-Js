@@ -35,7 +35,7 @@ const ItemInfo = ({ displayItemInfo: item }) => {
     };
 
     const activarAddCartItem = () =>{
-        addCartItem(item, contador)
+        addCartItem(item, contador);
     }
 
     return(
