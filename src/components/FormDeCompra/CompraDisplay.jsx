@@ -5,8 +5,7 @@ const CompraDisplay = ({item}) => {
 
     return(
         <div className="productos-comprados">
-            <h5>{item.titulo}</h5>
-            <p>{item.cantidad}</p>
+            <p>{item.titulo} <b>x{item.cantidad}</b></p>
         </div>
     )
 }
