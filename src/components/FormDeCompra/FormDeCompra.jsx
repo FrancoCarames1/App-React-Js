@@ -30,7 +30,7 @@ const FormDeCompra = () => {
 
         let ordenesDeProductos = database.collection("ordenes");
         ordenesDeProductos.add(objetoComprado).then(({ id }) => {
-            alert('Anotar: \n Id de compra:' + id + '\n Para ver su orden hecha ir a https://mundo-otaku.netlify.app/ordenes/' + id);
+            alert('Anotar: \n Id de compra:' + id + '\n Para ver su orden hecha ir a /ordenes/' + id + '\n Solo funciona en local host (no sé porque no en netlify)');
         }).catch(err => {
             console.log(err)
         }).finally(() => {
