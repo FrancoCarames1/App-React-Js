@@ -30,7 +30,7 @@ const FormDeCompra = () => {
 
         let ordenesDeProductos = database.collection("ordenes");
         ordenesDeProductos.add(objetoComprado).then(({ id }) => {
-            alert('Anotar: \n Id de compra:' + id);
+            alert('Anotar: \n Id de compra:' + id + '\n Para ver su orden hecha ir a https://mundo-otaku.netlify.app/ordenes/' + id);
         }).catch(err => {
             console.log(err)
         }).finally(() => {
@@ -60,7 +60,7 @@ const FormDeCompra = () => {
                 </>
             ) : (
                 <div className='contenedor-usuario-perdido'>
-                    <h2 className="texto-perdido">Ops.... parece que llegaste acá con el carrito vacío, nosotros te ayudamos.</h2>
+                    <h2 className="texto-perdido">Oops.... parece que llegaste acá con el carrito vacío, nosotros te ayudamos.</h2>
                     <Link to='/'>Clickeame</Link>
                     <img src="./img/anime-stare.gif" alt="anime peeking" className="chica-mirando" />
                 </div>
