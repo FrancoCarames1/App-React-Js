@@ -1,3 +1,16 @@
+# El proyecto Mundo Otaku
+
+La idea era un ecommerce divertido con un buen toque de anime para buscar gifs y entonces poder 
+animar un poco más la página.
+
+Agregué que el cliente pueda ver las órdenes si tiene el id accediendo a /ordenes/{insertar id de compra}
+
+Se uso firebase como base de datos y almacenamiento de imágenes de los productos.
+
+Espero que les guste y disculpa si no entró su anime favorito
+
+Saludos!
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
