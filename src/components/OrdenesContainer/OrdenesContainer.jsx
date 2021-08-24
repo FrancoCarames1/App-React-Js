@@ -13,7 +13,7 @@ const OrdenesContainer= () => {
 
     const getOrdenesInfo = () => {
             
-            const ordenes = database
+            database
                 .collection("ordenes")
                 .doc(idParams)
                 .get().then((doc) => {

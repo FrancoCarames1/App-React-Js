@@ -13,7 +13,7 @@ const ItemInfoContainer= () => {
 
     const getItemsInfo = () => {
             
-            const productos = database
+            database
                 .collection("productos")
                 .doc(idParams)
                 .get().then((doc) => {
