@@ -37,8 +37,8 @@ const Navbar = () => {
         <nav className="barra-nav">
             <ul className="lista-plegable">
                 <li className="nombre-tienda"><Link to="/">Mundo Otaku</Link></li>
-                {categorias.map((cat) =>(
-                    <li className="contenido-lista" id={`lista${cat.id}`}><Link to={`/productos/${cat.titulo}`}>{cat.titulo}</Link></li>
+                {categorias.map((categoria) =>(
+                    <li className="contenido-lista" id={`lista${categoria.id}`}><Link to={`/productos/${categoria.titulo}`}>{categoria.titulo}</Link></li>
                 ))}
                 <li className="link-carro">
                     <Link to="/carrito">

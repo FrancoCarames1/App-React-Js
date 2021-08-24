@@ -8,6 +8,7 @@ import CarritoContainer from './components/CarritoContainer/CarritoContainer';
 import DisplayCategoria from './components/DisplayCategoria/DisplayCategoria';
 import DisplayMainView from './components/DisplayMainView/DisplayMainView';
 import FormDeCompra from './components/FormDeCompra/FormDeCompra';
+import OrdenesContainer from './components/OrdenesContainer/OrdenesContainer';
 
 function App() {
   return (
@@ -32,6 +33,9 @@ function App() {
             </Route>
             <Route exact path="/confirmandoCompra">
               <FormDeCompra />
+            </Route>
+            <Route exact path="/ordenes/:id">
+              <OrdenesContainer />
             </Route>
           </Switch>
         </main>
